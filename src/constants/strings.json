@@ -1,0 +1,8 @@
+{
+    "GAME_RULES_DESCRIPTION": "Mastermind is a game where one player (the code master) will create a sequence of 4 colors. Each of these colors can be one of six values, \"red\", \"blue\", \"green\", \"yellow\", \"white\", or \"black\". Repeating colors are allowed. The other player (the code breaker) gets 10 turns to attempt to guess the sequence of colors. After each guess, the code master will respond by telling them how many colors were guessed exactly correct, and also how many colors guessed are in the solution, but in a different location.",
+    "GAME_RULES": "Rules",
+    "GAME_NAME": "MASTERMIND",
+    "BUTTON": {
+        "PLAY": "Play"
+    }
+}

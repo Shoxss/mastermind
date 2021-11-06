@@ -1,0 +1,15 @@
+.BackgroundDark {
+    background-color: #232937;
+}
+
+.TextWhite {
+    color: white;
+}
+
+.PlayButton {
+    margin-right: 45% !important;
+}
+
+.ModalBody {
+    z-index: 1;
+}
