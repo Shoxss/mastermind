@@ -1,1 +1,60 @@
-.GameManager {}
+.GameManager {
+    height: 900px;
+    width: 500px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    /* background-color: #232937; */
+    /* background-color: gray; */
+}
+
+.GameColor {
+    height: 150px;
+    width: 150px;
+    margin-top: 10px;
+    margin-left: 10px;
+    display: inline-block !important;
+}
+
+.GuessColor {
+    height: 105px;
+    width: 105px;
+    margin: 5px;
+    margin-top: 10px;
+    display: inline-block !important;
+}
+
+.GuessList {
+    height: 105px;
+    margin-top: 10px;
+    border-color: rgb(141, 148, 156);
+    border-top-style: solid;
+}
+
+.GuessListTitle {
+    color: rgb(238, 238, 238);
+    display:inline-block;
+    margin: 0;
+    margin-left: 75px;
+    line-height: 1.7;
+}
+
+.GuessListTitleContainer {
+    height: 50px;
+}
+
+.GuessListClear {
+    margin: 0;
+    margin-top: 12.5px;
+    float: right;
+}
+
+.GuessSubmit {
+    margin-top: 35px;
+}
+
+.Alert {
+    margin-top: 25px;
+}

@@ -1,0 +1,25 @@
+{
+    "COLORS": {
+        "PASTEL": {
+            "BLUE": "#336082",
+            "RED": "#823333",
+            "YELLOW": "#e0e067",
+            "BLACK": "#292929",
+            "GREEN": "#338233",
+            "WHITE": "#f2f2f2",
+            "ORANGE": "#c79a48",
+            "PURPLE": "#6a3382",
+            "PINK": "#d15ebc"
+
+        },
+        "VIBRANT": {
+            "BLUE": "#00bfff",
+            "RED": "#ff0000",
+            "YELLOW": "#fff700",
+            "BLACK": "#292929",
+            "GREEN": "#00ff15",
+            "WHITE": "#f2f2f2",
+            "ORANGE": "#ff9100"
+        }
+    }
+}

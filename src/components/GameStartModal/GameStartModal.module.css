@@ -13,3 +13,8 @@
 .ModalBody {
     z-index: 1;
 }
+
+.GameTitle {
+    color: white;
+    text-align: center;
+}
