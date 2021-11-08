@@ -6,7 +6,7 @@ class GameController extends React.Component {
     constructor() {
         super();
         this.attemptsLeft = 10;
-        this.answer = ['blue', 'black', 'purple', 'yellow'];
+        this.answer = this.generateMockAnswer();
     }
 
     /**
@@ -18,10 +18,10 @@ class GameController extends React.Component {
             method: 'POST',
             mode: 'no-cors',
         };
-        const response = await fetch(CONFIG.ENDPOINT_URL + '/create', options).then(res => res.json());
-        return response;
+        // const response = await fetch(CONFIG.ENDPOINT_URL + '/create', options).then(res => res.json());
+        // return response;
 
-        // return this.mockCreateGameEndpoint();
+        return this.mockCreateGameEndpoint();
     };
 
     /**
@@ -38,10 +38,10 @@ class GameController extends React.Component {
             },
             body: JSON.stringify({ guess })
         };
-        const response = await fetch(CONFIG.ENDPOINT_URL + '/game/' + gameId + '/guess', options).then(res => res.json());
-        return response;
+        // const response = await fetch(CONFIG.ENDPOINT_URL + '/game/' + gameId + '/guess', options).then(res => res.json());
+        // return response;
 
-        // return this.mockGuessEndpoint(guess);
+        return this.mockGuessEndpoint(guess);
     }
 
     /**
@@ -83,6 +83,30 @@ class GameController extends React.Component {
      */
     mockCreateGameEndpoint() {
         return { game_id: '12345' };
+    }
+
+    /**
+     * @description Generate a random answer
+     * @returns {Array}
+     */
+    generateMockAnswer() {
+        const answer = [];
+        const possibleColors = [
+            'blue',
+            'red',
+            'yellow',
+            'black',
+            'green',
+            'white',
+            'orange',
+            'purple',
+            'pink',
+        ];
+        for (let i = 0; i < 4; i++) {
+            answer.push(possibleColors[Math.floor(Math.random() * 8)]);
+        }
+        console.log('Answer: ' + answer);
+        return answer;
     }
 };
 

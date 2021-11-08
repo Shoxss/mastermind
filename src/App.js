@@ -7,6 +7,7 @@ function App() {
     <div className="App">
       <GameStartModal/>
       <GameManager/>
+      <p className="Cheater">Psst... the answer is in the console. You know, if you're a cheater.</p>
     </div>
   );
 }
