@@ -68,7 +68,6 @@ class GameManager extends React.Component {
       this.setState({ alertMessage: CONSTANTS.ALERT.GUESS_COUNT, alertVariant: 'warning', showAlert: true });
     } else {
       this.gameController.makeGuess(this.state.gameId, [...Array.from(this.state.guessColors).map((guessColor) => guessColor.color)]).then((response) => {
-        console.log(response);
         if (response.correct === 4) {
           this.setState({ showEnd: true, won: true });
         } else if (response.turns_left === 0) {
