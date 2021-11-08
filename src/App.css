@@ -36,3 +36,11 @@
     transform: rotate(360deg);
   }
 }
+
+.Cheater {
+  color: #374057;
+  position: fixed;
+  margin-top: 900px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
