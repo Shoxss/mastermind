@@ -13,7 +13,7 @@ const GameStartModal = () => {
   const handleClose = () => setShow(false);
 
   return (
-    <Modal backdrop="static" show={show} onHide={handleClose}>
+    <Modal className={styles.GameStartModal} backdrop="static" show={show} onHide={handleClose}>
       <Modal.Body className={[styles.BackgroundDark,styles.ModalBody]}>
         <h1 className={styles.GameTitle}>{constants.GAME_NAME}</h1>
         <br/>
