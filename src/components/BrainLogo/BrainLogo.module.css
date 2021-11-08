@@ -1,35 +1,24 @@
 .BrainLogo {
-    height: 339px;
-    width: 400px;
-    overflow: hidden;
+    width: 300px;
+    transform: translate(20%);
 }
 
 .BrainSilhouette {
-    height: 339px;
-    width: 400px;
-    margin-left: 30px;
-    margin-top: -295px;
+    margin-left: 40px;
+    margin-top: -170px;
     position: absolute;
     z-index: -1;
 }
 
 .BrainCog1 {
-    height: 150px;
-    width: 150px;
-    margin-left: 70px;
-    margin-right: 5px;
-    margin-top: 40px;
     display: inline-block;
 }
 
 .BrainCog2 {
-    height: 150px;
-    width: 150px;
+    margin-left: 55px;
     display: inline-block;
 }
 
 .BrainCog3 {
-    height: 100px;
-    width: 100px;
-    margin-left: 230px;
+    margin-left: 175px;
 }

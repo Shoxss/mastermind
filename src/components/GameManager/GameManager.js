@@ -90,45 +90,50 @@ class GameManager extends React.Component {
 
   render() {
     return (
-      <div className={styles.GameManager} data-testid="GameManager">
-        <Button variant="outline-info" className={styles.GameColor} style={{backgroundColor: COLOR_PALETTE.BLUE}} onClick={() => this.handleColorClick('BLUE')}/>
-        <Button variant="outline-info" className={styles.GameColor} style={{backgroundColor: COLOR_PALETTE.RED}} onClick={() => this.handleColorClick('RED')}/>
-        <Button variant="outline-info" className={styles.GameColor} style={{backgroundColor: COLOR_PALETTE.BLACK}} onClick={() => this.handleColorClick('BLACK')}/>
-        <Button variant="outline-info" className={styles.GameColor} style={{backgroundColor: COLOR_PALETTE.PINK}} onClick={() => this.handleColorClick('PINK')}/>
-        <Button variant="outline-info" className={styles.GameColor} style={{backgroundColor: COLOR_PALETTE.YELLOW}} onClick={() => this.handleColorClick('YELLOW')}/>
-        <Button variant="outline-info" className={styles.GameColor} style={{backgroundColor: COLOR_PALETTE.WHITE}} onClick={() => this.handleColorClick('WHITE')}/>
-        <Button variant="outline-info" className={styles.GameColor} style={{backgroundColor: COLOR_PALETTE.ORANGE}} onClick={() => this.handleColorClick('ORANGE')}/>
-        <Button variant="outline-info" className={styles.GameColor} style={{backgroundColor: COLOR_PALETTE.GREEN}} onClick={() => this.handleColorClick('GREEN')}/>
-        <Button variant="outline-info" className={styles.GameColor} style={{backgroundColor: COLOR_PALETTE.PURPLE}} onClick={() => this.handleColorClick('PURPLE')}/>
+      <div className={styles.GameManagerContainer} data-testid="GameManager">
+        <div className={styles.GameManager}>
+          <Button variant="outline-info" className={styles.GameColor} style={{backgroundColor: COLOR_PALETTE.BLUE}} onClick={() => this.handleColorClick('BLUE')}/>
+          <Button variant="outline-info" className={styles.GameColor} style={{backgroundColor: COLOR_PALETTE.RED}} onClick={() => this.handleColorClick('RED')}/>
+          <Button variant="outline-info" className={styles.GameColor} style={{backgroundColor: COLOR_PALETTE.BLACK}} onClick={() => this.handleColorClick('BLACK')}/>
+          <Button variant="outline-info" className={styles.GameColor} style={{backgroundColor: COLOR_PALETTE.PINK}} onClick={() => this.handleColorClick('PINK')}/>
+          <Button variant="outline-info" className={styles.GameColor} style={{backgroundColor: COLOR_PALETTE.YELLOW}} onClick={() => this.handleColorClick('YELLOW')}/>
+          <Button variant="outline-info" className={styles.GameColor} style={{backgroundColor: COLOR_PALETTE.WHITE}} onClick={() => this.handleColorClick('WHITE')}/>
+          <Button variant="outline-info" className={styles.GameColor} style={{backgroundColor: COLOR_PALETTE.ORANGE}} onClick={() => this.handleColorClick('ORANGE')}/>
+          <Button variant="outline-info" className={styles.GameColor} style={{backgroundColor: COLOR_PALETTE.GREEN}} onClick={() => this.handleColorClick('GREEN')}/>
+          <Button variant="outline-info" className={styles.GameColor} style={{backgroundColor: COLOR_PALETTE.PURPLE}} onClick={() => this.handleColorClick('PURPLE')}/>
 
-        <div className={styles.GuessListTitleContainer}>
-          <h1 className={styles.GuessListTitle}>{CONSTANTS.GUESS_TITLE}</h1>
-          <Button variant="secondary" className={styles.GuessListClear} onClick={() => this.handleClearClick()}>{CONSTANTS.BUTTON.CLEAR}</Button>
+          <div className={styles.GuessListTitleContainer}>
+            <h1 className={styles.GuessListTitle}>{CONSTANTS.GUESS_TITLE}</h1>
+            <Button variant="secondary" className={styles.GuessListClear} onClick={() => this.handleClearClick()}>{CONSTANTS.BUTTON.CLEAR}</Button>
+          </div>
+
+          <div className={styles.GuessList}>{this.state.guesses}</div>
+
+          <Button variant="success" className={styles.GuessSubmit} onClick={() => this.handleSubmitClick()}>{CONSTANTS.BUTTON.SUBMIT}</Button>
+
+          <Alert show={this.state.showAlert} variant={this.state.alertVariant} className={styles.Alert} >{this.state.alertMessage}</Alert>
+
+          <Modal backdrop="static" show={this.state.won}>
+            <Modal.Body className={[styles.BackgroundDark,styles.ModalBody]}>
+              <h1 className={styles.WinLoseText}>{CONSTANTS.ALERT.WIN}</h1>
+            </Modal.Body>
+            <Modal.Footer className={styles.BackgroundDark}>
+              <Button className={styles.PlayAgainButton} variant="success" onClick={() => this.handlePlayAgain()}>{CONSTANTS.BUTTON.PLAY_AGAIN}</Button>
+            </Modal.Footer>
+          </Modal>
+
+          <Modal backdrop="static" show={this.state.lost}>
+            <Modal.Body show={this.state.lost} className={[styles.BackgroundDark,styles.ModalBody]}>
+              <h1 className={styles.WinLoseText}>{CONSTANTS.ALERT.LOSE}</h1>
+            </Modal.Body>
+            <Modal.Footer className={styles.BackgroundDark}>
+              <Button className={styles.PlayAgainButton} variant="success" onClick={() => this.handlePlayAgain()}>{CONSTANTS.BUTTON.PLAY_AGAIN}</Button>
+            </Modal.Footer>
+          </Modal>
+
+          <p className={styles.Cheater}>Psst... the answer is in the console. You know, if you're a cheater.</p>
         </div>
 
-        <div className={styles.GuessList}>{this.state.guesses}</div>
-
-        <Button variant="success" className={styles.GuessSubmit} onClick={() => this.handleSubmitClick()}>{CONSTANTS.BUTTON.SUBMIT}</Button>
-
-        <Alert show={this.state.showAlert} variant={this.state.alertVariant} className={styles.Alert} >{this.state.alertMessage}</Alert>
-
-        <Modal backdrop="static" show={this.state.won}>
-          <Modal.Body className={[styles.BackgroundDark,styles.ModalBody]}>
-            <h1 className={styles.WinLoseText}>{CONSTANTS.ALERT.WIN}</h1>
-          </Modal.Body>
-          <Modal.Footer className={styles.BackgroundDark}>
-            <Button className={styles.PlayAgainButton} variant="success" onClick={() => this.handlePlayAgain()}>{CONSTANTS.BUTTON.PLAY_AGAIN}</Button>
-          </Modal.Footer>
-        </Modal>
-
-        <Modal backdrop="static" show={this.state.lost}>
-          <Modal.Body show={this.state.lost} className={[styles.BackgroundDark,styles.ModalBody]}>
-            <h1 className={styles.WinLoseText}>{CONSTANTS.ALERT.LOSE}</h1>
-          </Modal.Body>
-          <Modal.Footer className={styles.BackgroundDark}>
-            <Button className={styles.PlayAgainButton} variant="success" onClick={() => this.handlePlayAgain()}>{CONSTANTS.BUTTON.PLAY_AGAIN}</Button>
-          </Modal.Footer>
-        </Modal>
       </div>
     );
   }
