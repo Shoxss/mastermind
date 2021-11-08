@@ -55,17 +55,28 @@ class GameController extends React.Component {
         let close = 0;
         let correct = 0;
 
-        let notGuessedCorrect = [];
-        for (let i = 0; i < guess.length; i++) {
-            if (this.answer[i] === guess[i]) {
-                correct++;
-            } else {
-                notGuessedCorrect.push(this.answer[i]);
+        const verifiedGuess = [];
+        const verifiedAnswer = [];
+        for (let i = 0; i < 4; i++) {
+            if (!verifiedAnswer.includes(i) && !verifiedGuess.includes(i)) {
+                if (this.answer[i] === guess[i]) {
+                    correct++;
+                    verifiedAnswer.push(i);
+                    verifiedGuess.push(i);
+                }
             }
         }
-        for (let i = 0; i < guess.length; i++) {
-            if (notGuessedCorrect.includes(guess[i])) {
-                close++;
+        for (let i = 0; i < 4; i++) {
+            if (!verifiedGuess.includes(i)) {
+                for (let j = 0; j < 4; j++) {
+                    if (!verifiedAnswer.includes(j)) {
+                        if (this.answer[j] === guess[i]) {
+                            close++;
+                            verifiedAnswer.push(j);
+                            verifiedGuess.push(i);
+                        }
+                    }
+                }
             }
         }
 
