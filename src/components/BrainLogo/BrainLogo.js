@@ -1,8 +1,6 @@
 import React from 'react';
 import styles from './BrainLogo.module.css';
 
-// import { ReactComponent as BrainSilhouette } from '../../media/BrainSilhouette.svg';
-// import { ReactComponent as Cog } from '../../media/Cog.svg';
 import { default as BrainSilhouette } from '../../media/BrainSilhouette.svg';
 import { default as Cog1 } from '../../media/Cog1.svg';
 import { default as Cog2 } from '../../media/Cog2.svg';

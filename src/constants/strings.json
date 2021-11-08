@@ -5,11 +5,13 @@
     "GUESS_TITLE": "GUESSES",
     "BUTTON": {
         "PLAY": "Play",
-        "SUBMIT": "SUBMIT",
-        "CLEAR": "CLEAR",
-        "": ""
+        "SUBMIT": "Submit",
+        "CLEAR": "Clear",
+        "PLAY_AGAIN": "Play again"
     },
     "ALERT": {
-        "GUESS_COUNT": "Must submit 4 guesses"
+        "GUESS_COUNT": "Must submit 4 guesses",
+        "WIN": "Winner! You guessed all colors correctly!",
+        "LOSE": "No more attempts left... better luck next time!"
     }
 }
